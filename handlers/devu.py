@@ -8,19 +8,21 @@ from helpers.filters import command
 from pyrogram import Client as bot
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
+from config import (BOT_NAME, SUPPORT_GROUP, OWNER_USERNAME, BOT_USERNAME)
 
 
 @bot.on_message(filters.command("start"))
 def start_(bot, message):
     
-    START_TEXT = """Hey {}\n\nMyself DevuMusic!\nA simple , lagfree and flexible music robot!\nIf you facing any issue related to this music bot then please join @SilentVerse\nFor more help you can explorer help menu by tapping on /help !"""
+    START_TEXT = """Hey {}\n\nMyself DevuMusic!\nA simple , lagfree and flexible music robot!\nIf you facing any issue related to this music bot then please join @{}\nFor more help you can explorer help menu by tapping on /help !"""
 
     START_BUTTON = [
                 [
-                    InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ💥", url="http://t.me/SilentMusic01bot?startgroup=true"),
+                    InlineKeyboardButton(text="Updates", url="https://t.me/SILENT_BOTS"),
+                    InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ💥", url="http://t.me/{BOT_USERNAME}?startgroup=true"),
                 ],
                 [
-                    InlineKeyboardButton(text="Updates", url="https://t.me/SILENT_BOTS"),
+                    InlineKeyboardButton(text="Owner", url="https://t.me/{OWNER_USERNAME}"),
                     InlineKeyboardButton(text="Source✨", callback_data="repo_k"),
                 ],                
                 [                    
@@ -29,14 +31,14 @@ def start_(bot, message):
                 
             ]
     message.reply_text(
-        START_TEXT.format(message.from_user.mention),
+        START_TEXT.format(message.from_user.mention, SUPPORT_GROUP),
         reply_markup=InlineKeyboardMarkup(START_BUTTON)
     )
     message.delete()
 
 @bot.on_message(filters.command("help"))
 def help_(bot, message):
-    HELP_TXT = """Hoi {}\nHere is the help menu choose your desireoption nd explorer it!!\nFor any kind of help or query Just join @SilentVerse and ask your query!!"""
+    HELP_TXT = """Hoi {}\nHere is the help menu choose your desireoption nd explorer it!!\nFor any kind of help or query Just join @{} and ask your query!!"""
     
     HELP_BUTTON = [
         [
@@ -49,7 +51,7 @@ def help_(bot, message):
         ],
     ]
     message.reply_text(
-        HELP_TXT.format(message.from_user.first_name),
+        HELP_TXT.format(message.from_user.first_name, SUPPORT_GROUP),
         reply_markup=InlineKeyboardMarkup(HELP_BUTTON)
     )
     message.delete()
@@ -58,7 +60,7 @@ def help_(bot, message):
 def callback_query(Client, callback: CallbackQuery):
     if callback.data == "help_":
     
-        HELP_TXT = f"""Hoi, Here is the help menu choose your desireoption nd explorer it!!\nFor any kind of help or query Just join @SilentVerse and ask your query!!"""
+        HELP_TXT = f"""Hoi, Here is the help menu choose your desireoption nd explorer it!!\nFor any kind of help or query Just join @{SUPPORT_GROUP} and ask your query!!"""
     
         HELP_BUTTON = [
             [
@@ -88,13 +90,14 @@ def callback_query(Client, callback: CallbackQuery):
         )
     elif callback.data == "HOME":
  
-        START_TEXT = f"""Hey, Myself DevuMusic!\nA simple , lagfree and flexible music robot!\nIf you facing any issue related to this music bot then please join @SilentVerse\nFor more help you can explorer help menu by tapping on /help !"""
+        START_TEXT = f"""Hey, Myself DevuMusic!\nA simple , lagfree and flexible music robot!\nIf you facing any issue related to this music bot then please join @{SUPPORT_GROUP}\nFor more help you can explorer help menu by tapping on /help !"""
         START_BUTTON = [
                     [
-                        InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ💥", url="http://t.me/SilentMusic01bot?startgroup=true"),
+                        InlineKeyboardButton(text="Updates", url="https://t.me/SILENT_BOTS"),
+                        InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ💥", url="http://t.me/{BOT_USERNAME}?startgroup=true"),
                     ],
                     [
-                        InlineKeyboardButton(text="Updates", url="https://t.me/SILENT_BOTS"),
+                        InlineKeyboardButton(text="Owner", url="https://t.me/{OWNER_USERNAME}"),
                         InlineKeyboardButton(text="Source✨", callback_data="repo_k"),
                     ],                
                     [                    
