@@ -18,10 +18,11 @@ def start_(bot, message):
 
     START_BUTTON = [
                 [
-                    InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ💥", url="http://t.me/{BOT_USERNAME}?startgroup=true"),
+                    InlineKeyboardButton(text="Updates", url=f"https://t.me/SILENT_BOTS"),
+                    InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ💥", url=f"http://t.me/{BOT_USERNAME}?startgroup=true"),
                 ],
                 [
-                    InlineKeyboardButton(text="Updates", url="https://t.me/SILENT_BOTS"),
+                    InlineKeyboardButton(text="Owner", url=f"https://t.me/{OWNER_USERNAME}"),
                     InlineKeyboardButton(text="Source✨", callback_data="repo_k"),
                 ],                
                 [                    
@@ -93,10 +94,10 @@ def callback_query(Client, callback: CallbackQuery):
         START_BUTTON = [
                     [
                         InlineKeyboardButton(text="Updates", url="https://t.me/SILENT_BOTS"),
-                        InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ💥", url="http://t.me/{BOT_USERNAME}?startgroup=true"),
+                        InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ💥", url=f"http://t.me/{BOT_USERNAME}?startgroup=true"),
                     ],
                     [
-                        InlineKeyboardButton(text="Owner", url="https://t.me/{OWNER_USERNAME}"),
+                        InlineKeyboardButton(text="Owner", url=f"https://t.me/{OWNER_USERNAME}"),
                         InlineKeyboardButton(text="Source✨", callback_data="repo_k"),
                     ],                
                     [                    
