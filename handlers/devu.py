@@ -12,7 +12,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQ
 
 @bot.on_message(filters.command("start"))
 def start_(bot, message):
-    chutiya.id = message.from_user.mention
+    
     START_TEXT = """Hey {}\n\nMyself DevuMusic!\nA simple , lagfree and flexible music robot!\nIf you facing any issue related to this music bot then please join @SilentVerse\nFor more help you can explorer help menu by tapping on /help !"""
 
     START_BUTTON = [
@@ -29,7 +29,7 @@ def start_(bot, message):
                 
             ]
     message.reply_text(
-        START_TEXT.format(chutiya.id),
+        START_TEXT.format(message.from_user.mention),
         reply_markup=InlineKeyboardMarkup(START_BUTTON)
     )
     message.delete()
