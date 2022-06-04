@@ -2,7 +2,7 @@
 # Dear Pero ppls Plish Don't remove this line from here🌚
 
 from asyncio.queues import QueueEmpty
-from config import que
+from config import que, SUPPORT_GROUP
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from cache.admins import set
@@ -24,7 +24,7 @@ END = "https://telegra.ph/file/6d1902d08c88f318d53c7.jpg"
 
 BUTTON = [
     [
-        InlineKeyboardButton(text="Support", url="https://t.me/SilentVerse"),
+        InlineKeyboardButton(text="Support", url="https://t.me/{SUPPORT_GROUP}"),
         InlineKeyboardButton(text="🗑️Close", callback_data="close_"),
     ],
 ]
