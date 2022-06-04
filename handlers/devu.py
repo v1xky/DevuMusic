@@ -18,11 +18,10 @@ def start_(bot, message):
 
     START_BUTTON = [
                 [
-                    InlineKeyboardButton(text="Updates", url="https://t.me/SILENT_BOTS"),
                     InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ💥", url="http://t.me/{BOT_USERNAME}?startgroup=true"),
                 ],
                 [
-                    InlineKeyboardButton(text="Owner", url="https://t.me/{OWNER_USERNAME}"),
+                    InlineKeyboardButton(text="Updates", url="https://t.me/SILENT_BOTS"),
                     InlineKeyboardButton(text="Source✨", callback_data="repo_k"),
                 ],                
                 [                    
