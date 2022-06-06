@@ -14,7 +14,7 @@ from config import (BOT_NAME, SUPPORT_GROUP, OWNER_USERNAME, BOT_USERNAME)
 @bot.on_message(filters.command("start"))
 def start_(bot, message):
     
-    START_TEXT = """Hey {}\n\nMyself DevuMusic!\nA simple , lagfree and flexible music robot!\nIf you facing any issue related to this music bot then please join @{}\nFor more help you can explorer help menu by tapping on /help !"""
+    START_TEXT = """Hey {}\n\nMyself {} \nA simple , lagfree and flexible music robot!\nIf you facing any issue related to this music bot then please join @{}\nFor more help you can explorer help menu by tapping on /help !"""
 
     START_BUTTON = [
                 [
@@ -31,7 +31,7 @@ def start_(bot, message):
                 
             ]
     message.reply_text(
-        START_TEXT.format(message.from_user.mention, SUPPORT_GROUP),
+        START_TEXT.format(message.from_user.mention, BOT_NAME, SUPPORT_GROUP),
         reply_markup=InlineKeyboardMarkup(START_BUTTON)
     )
     message.delete()
@@ -77,7 +77,7 @@ def callback_query(Client, callback: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(HELP_BUTTON)
         )
     elif callback.data == "repo_k":
-        REPO_MSG = f"""Hey, Here is the source code of DevuMusic🧚‍♀️\nSo deploy your own and enjoy and don't forget to fork nd to give star 😕!!"""
+        REPO_MSG = f"""Hey, Here is the source code of {BOT_NAME} \nSo deploy your own and enjoy and don't forget to fork nd to give star 😕!!"""
         REPO_BUTTONS = [
             [
                 InlineKeyboardButton(text="Source", url="https://github.com/ItsmeHyper13/DevuMusic"),
@@ -90,7 +90,7 @@ def callback_query(Client, callback: CallbackQuery):
         )
     elif callback.data == "HOME":
  
-        START_TEXT = f"""Hey, Myself DevuMusic!\nA simple , lagfree and flexible music robot!\nIf you facing any issue related to this music bot then please join @{SUPPORT_GROUP}\nFor more help you can explorer help menu by tapping on /help !"""
+        START_TEXT = f"""Hey, Myself {BOT_NAME} \nA simple , lagfree and flexible music robot!\nIf you facing any issue related to this music bot then please join @{SUPPORT_GROUP}\nFor more help you can explorer help menu by tapping on /help !"""
         START_BUTTON = [
                     [
                         InlineKeyboardButton(text="Updates", url="https://t.me/SILENT_BOTS"),
