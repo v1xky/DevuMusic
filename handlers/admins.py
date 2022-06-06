@@ -64,25 +64,27 @@ async def resume(_, message: Message):
 @authorized_users_only
 async def stop(_, message: Message):
     chut_id = message.chat.id
-    try:
-        callsmusic.queues.clear(message.chat.id)
-    except QueueEmpty:
-        pass
-
-    await callsmusic.pytgcalls.leave_group_call(message.chat.id)
-    
-    await message.reply_photo(
-        photo=END,
-        caption=f"ᴏᴋᴋ, sᴛʀᴇᴀᴍ ᴇɴᴅᴇᴅ ʙʏ {message.from_user.mention} \n ɴᴏᴡ ʟᴇᴀᴠɪɴɢ ᴠᴄ ʙʏᴇ ʙʏᴇ!👋🏻",
-        reply_markup=InlineKeyboardMarkup(BUTTON)
-    )
-    await message.delete()
     if int(chut_id) not in ACTV_CALLS:
         await message.reply_text(
             "ᴡᴛғ, ᴘʟᴀʏ ᴛʜᴇ sᴏɴɢ ғɪʀsᴛ ɪɴ ᴏʀᴅᴇʀ ᴛᴏ sᴋɪᴘ ᴛᴀᴛ🙄!",
             reply_markup=InlineKeyboardMarkup(BUTTON)
         )
         await message.delete()
+    else:
+        try:
+            callsmusic.queues.clear(message.chat.id)
+        except QueueEmpty:
+            pass
+
+        await callsmusic.pytgcalls.leave_group_call(message.chat.id)
+    
+        await message.reply_photo(
+            photo=END,
+            caption=f"ᴏᴋᴋ, sᴛʀᴇᴀᴍ ᴇɴᴅᴇᴅ ʙʏ {message.from_user.mention} \n ɴᴏᴡ ʟᴇᴀᴠɪɴɢ ᴠᴄ ʙʏᴇ ʙʏᴇ!👋🏻",
+            reply_markup=InlineKeyboardMarkup(BUTTON)
+        )
+        await message.delete()
+    
 
 @Client.on_message(command(["skip"]) & other_filters)
 @errors
