@@ -51,7 +51,7 @@ def help_(bot, message):
         ],
     ]
     message.reply_text(
-        HELP_TXT.format(message.from_user.first_name, SUPPORT_GROUP),
+        HELP_TXT.format(message.from_user.mention, SUPPORT_GROUP),
         reply_markup=InlineKeyboardMarkup(HELP_BUTTON)
     )
     message.delete()
@@ -73,7 +73,7 @@ def callback_query(Client, callback: CallbackQuery):
             ],
         ]
         callback.edit_message_text(
-            HELP_TXT.format(callback.from_user.first_name, SUPPORT_GROUP),
+            HELP_TXT.format(callback.from_user.mention, SUPPORT_GROUP),
             reply_markup=InlineKeyboardMarkup(HELP_BUTTON)
         )
     elif callback.data == "repo_k":
@@ -85,7 +85,7 @@ def callback_query(Client, callback: CallbackQuery):
             ],
         ]
         callback.edit_message_text(
-            REPO_MSG.format(callback.from_user.first_name, BOT_NAME),
+            REPO_MSG.format(callback.from_user.mention, BOT_NAME),
             reply_markup=InlineKeyboardMarkup(REPO_BUTTONS)
         )
     elif callback.data == "HOME":
