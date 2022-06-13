@@ -9,151 +9,51 @@ from pyrogram import Client as bot
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from config import (BOT_NAME, SUPPORT_GROUP, OWNER_USERNAME, BOT_USERNAME)
-
+from cache.stuffs.string import (t1, t2, t3, t4, t5)
+from cache.stuffs.string2 import (button1, button2, button3, button4)
 
 @bot.on_message(filters.command("start"))
-def start_(bot, message):
-    
-    START_TEXT = """Hey {}\n\n➥ Myself {}\n❅ A simple , lagfree and flexible music robot!\n❅ If you facing any issue related to this music bot then please join @{}\n❅ For more help you can explorer help menu by tapping on /help !"""
-
-    START_BUTTON = [
-                [
-                    InlineKeyboardButton(text="Updates", url=f"https://t.me/SILENT_BOTS"),
-                    InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ💥", url=f"http://t.me/{BOT_USERNAME}?startgroup=true"),
-                ],
-                [
-                    InlineKeyboardButton(text="Owner", url=f"https://t.me/{OWNER_USERNAME}"),
-                    InlineKeyboardButton(text="Source✨", callback_data="repo_k"),
-                ],                
-                [                    
-                    InlineKeyboardButton(text="Help & Commands!", callback_data="help_"),
-                ],
-                
-            ]
+def start_(bot, message):   
     message.reply_text(
-        START_TEXT.format(message.from_user.mention, BOT_NAME, SUPPORT_GROUP),
-        reply_markup=InlineKeyboardMarkup(START_BUTTON)
+        t1.format(message.from_user.mention, BOT_NAME, SUPPORT_GROUP),
+        reply_markup=InlineKeyboardMarkup(button1)
     )
     message.delete()
 
 @bot.on_message(filters.command("help"))
 def help_(bot, message):
-    HELP_TXT = """Hoi {}\nHere is the help menu choose your desireoption nd explorer it!!\n\nFor any kind of help or query Just join @{} and ask your query!!"""
-    
-    HELP_BUTTON = [
-        [
-            InlineKeyboardButton(text="Basic!", callback_data="basic_"),
-            InlineKeyboardButton(text="Advance!", callback_data="admin_cmd"),
-        ],
-        [
-            InlineKeyboardButton(text="Close", callback_data="close_"),
-            InlineKeyboardButton(text="Back", callback_data="HOME"),
-        ],
-    ]
     message.reply_text(
-        HELP_TXT.format(message.from_user.mention, SUPPORT_GROUP),
-        reply_markup=InlineKeyboardMarkup(HELP_BUTTON)
+        t2.format(message.from_user.mention, SUPPORT_GROUP),
+        reply_markup=InlineKeyboardMarkup(button2)
     )
     message.delete()
 
 @bot.on_callback_query()
 def callback_query(Client, callback: CallbackQuery):
     if callback.data == "help_":
-    
-        HELP_TXT = """Hoi {}\nHere is the help menu choose your desireoption nd explorer it!!\n\nFor any kind of help or query Just join @{} and ask your query!!"""
-    
-        HELP_BUTTON = [
-            [
-                InlineKeyboardButton(text="Basic!", callback_data="basic_"),
-                InlineKeyboardButton(text="Advance!", callback_data="admin_cmd"),
-            ],
-            [
-                InlineKeyboardButton(text="Close", callback_data="close_"),
-                InlineKeyboardButton(text="Back", callback_data="HOME"),
-            ],
-        ]
         callback.edit_message_text(
-            HELP_TXT.format(callback.from_user.mention, SUPPORT_GROUP),
-            reply_markup=InlineKeyboardMarkup(HELP_BUTTON)
+            t2.format(callback.from_user.mention, SUPPORT_GROUP),
+            reply_markup=InlineKeyboardMarkup(button2)
         )
-    elif callback.data == "repo_k":
-        REPO_MSG = """Hey {},\n\nHere is the source code of {} \nSo deploy your own and enjoy and don't forget to fork nd to give star 😕!!"""
-        REPO_BUTTONS = [
-            [
-                InlineKeyboardButton(text="Source", url="https://github.com/ItsmeHyper13/DevuMusic"),
-                InlineKeyboardButton(text="Back", callback_data="HOME"),
-            ],
-        ]
+    elif callback.data == "repo_k":                
         callback.edit_message_text(
-            REPO_MSG.format(callback.from_user.mention, BOT_NAME),
-            reply_markup=InlineKeyboardMarkup(REPO_BUTTONS)
+            t5.format(callback.from_user.mention, BOT_NAME),
+            reply_markup=InlineKeyboardMarkup(button3)
         )
-    elif callback.data == "HOME":
- 
-        START_TEXT = """Hey {}\n\n➥ Myself {}\n❅ A simple , lagfree and flexible music robot!\n❅ If you facing any issue related to this music bot then please join @{}\n❅ For more help you can explorer help menu by tapping on /help !"""
-        START_BUTTON = [
-                    [
-                        InlineKeyboardButton(text="Updates", url="https://t.me/SILENT_BOTS"),
-                        InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ💥", url=f"http://t.me/{BOT_USERNAME}?startgroup=true"),
-                    ],
-                    [
-                        InlineKeyboardButton(text="Owner", url=f"https://t.me/{OWNER_USERNAME}"),
-                        InlineKeyboardButton(text="Source✨", callback_data="repo_k"),
-                    ],                
-                    [                    
-                        InlineKeyboardButton(text="Help & Commands!", callback_data="help_"),
-                    ],      
-        ]
-        
+    elif callback.data == "HOME":                       
         callback.edit_message_text(
-            START_TEXT.format(callback.from_user.mention, BOT_NAME, SUPPORT_GROUP),
-            reply_markup=InlineKeyboardMarkup(START_BUTTON)
+            t1.format(callback.from_user.mention, BOT_NAME, SUPPORT_GROUP),
+            reply_markup=InlineKeyboardMarkup(button1)
         )
-    elif callback.data == "basic_":
-        B_HELP = """
-`Basics Commands !!`
-
-/play (query, ytlink, audio file) - use this command and enjoy music
-/ytp (query) - Use it for better search music!!
-/song (query) - Download your favourite songs using this command!
-/search (query) - This command will give you youtube search of your query!
-"""
-        BUTTON = [
-            [
-                InlineKeyboardButton(text="Close", callback_data="close_"),
-                InlineKeyboardButton(text="Back", callback_data="help_"),
-            ],
-        ]
+    elif callback.data == "basic_":      
         callback.edit_message_text(
-            B_HELP,
-            reply_markup=InlineKeyboardMarkup(BUTTON)
+            t3,
+            reply_markup=InlineKeyboardMarkup(button4)
         )
-    elif callback.data == "admin_cmd":
-        A_HELP = """
-`Admins Commands!!`
-
-/pause - To pause the song!
-/resume - Resume paused song!
-/skip - skip to the next song!
-/end - End the stream!
-/joinub - To invite assistant in your group!
-
-
-`Sudo Command!`
-
-/rmf - To clean Download file from database!
-/rmw - To clean raw files from database!
-/dclean - To clean files from server!
-"""
-        BUTTON = [
-            [
-                InlineKeyboardButton(text="Close", callback_data="close_"),
-                InlineKeyboardButton(text="Back", callback_data="help_"),
-            ],
-        ]
+    elif callback.data == "admin_cmd":               
         callback.edit_message_text(
-            A_HELP,
-            reply_markup=InlineKeyboardMarkup(BUTTON)
+            t4,
+            reply_markup=InlineKeyboardMarkup(button4)
         )
     elif callback.data == "close_":
         callback.message.delete()
