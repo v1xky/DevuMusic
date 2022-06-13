@@ -40,3 +40,4 @@ A_HELP = """
 """
 
 
+REPO_MSG = """Hey {},\n\nHere is the source code of {} \nSo deploy your own and enjoy and don't forget to fork nd to give star 😕!!"""
