@@ -7,13 +7,13 @@
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 
 
-START_TEXT = """Hey {}\n\n➥ Myself {}\n❅ A simple , lagfree and flexible music robot!\n❅ If you facing any issue related to this music bot then please join @{}\n❅ For more help you can explorer help menu by tapping on /help !"""
+t1 = """Hey {}\n\n➥ Myself {}\n❅ A simple , lagfree and flexible music robot!\n❅ If you facing any issue related to this music bot then please join @{}\n❅ For more help you can explorer help menu by tapping on /help !"""
 
 
-HELP_TXT = """Hoi {}\nHere is the help menu choose your desireoption nd explorer it!!\n\nFor any kind of help or query Just join @{} and ask your query!!"""
+t2 = """Hoi {}\nHere is the help menu choose your desireoption nd explorer it!!\n\nFor any kind of help or query Just join @{} and ask your query!!"""
 
 
-B_HELP = """
+t3 = """
 `Basics Commands !!`
 
 /play (query, ytlink, audio file) - use this command and enjoy music
@@ -22,7 +22,7 @@ B_HELP = """
 /search (query) - This command will give you youtube search of your query!
 """
 
-A_HELP = """
+t4 = """
 `Admins Commands!!`
 
 /pause - To pause the song!
@@ -40,4 +40,4 @@ A_HELP = """
 """
 
 
-REPO_MSG = """Hey {},\n\nHere is the source code of {} \nSo deploy your own and enjoy and don't forget to fork nd to give star 😕!!"""
+t5 = """Hey {},\n\nHere is the source code of {} \nSo deploy your own and enjoy and don't forget to fork nd to give star 😕!!"""
