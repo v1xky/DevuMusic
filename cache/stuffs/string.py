@@ -5,6 +5,7 @@
 # Dear Pero ppls Plish Don't remove this line from here🌚
 
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
+from config import (BOT_NAME, SUPPORT_GROUP, OWNER_USERNAME, BOT_USERNAME)
 
 
 t1 = """Hey {}\n\n➥ Myself {}\n❅ A simple , lagfree and flexible music robot!\n❅ If you facing any issue related to this music bot then please join @{}\n❅ For more help you can explorer help menu by tapping on /help !"""
