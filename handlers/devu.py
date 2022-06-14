@@ -8,15 +8,14 @@ from helpers.filters import command
 from pyrogram import Client as bot
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
-from config import (BOT_NAME, SUPPORT_GROUP, OWNER_USERNAME, BOT_USERNAME)
+from config import (BOT_NAME, SUPPORT_GROUP, OWNER_USERNAME, BOT_USERNAME,BOT_IMG)
 from cache.stuffs.string import (t1, t2, t3, t4, t5)
 from cache.stuffs.string2 import (button1, button2, button3, button4)
 
-img = "https://telegra.ph/file/077c561f07cceec56af27.jpg"
 @bot.on_message(filters.command("start"))
-def start_(bot, message):   
+def start_(bot, message):
     message.reply_photo(
-        photo=img,
+        photo=BOT_IMG,
         caption=t1.format(message.from_user.mention, BOT_NAME, SUPPORT_GROUP),
         reply_markup=InlineKeyboardMarkup(button1)
     )
