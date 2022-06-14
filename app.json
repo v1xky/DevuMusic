@@ -43,8 +43,8 @@
       "required": true
     },
     "BOT_IMG": {
-      "description": "Add bot image that will shown up in your bot menu"
-      "required": false
+      "description": "Add bot image that will shown up in your bot menu",
+      "required": false,
       "value": "https://telegra.ph/file/2c3097ae03f950800a66f.jpg"
     },
     "SUDO_USERS": {
