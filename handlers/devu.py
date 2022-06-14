@@ -12,10 +12,12 @@ from config import (BOT_NAME, SUPPORT_GROUP, OWNER_USERNAME, BOT_USERNAME)
 from cache.stuffs.string import (t1, t2, t3, t4, t5)
 from cache.stuffs.string2 import (button1, button2, button3, button4)
 
+img = "https://telegra.ph/file/077c561f07cceec56af27.jpg"
 @bot.on_message(filters.command("start"))
 def start_(bot, message):   
-    message.reply_text(
-        t1.format(message.from_user.mention, BOT_NAME, SUPPORT_GROUP),
+    message.reply_photo(
+        photo=img,
+        caption=t1.format(message.from_user.mention, BOT_NAME, SUPPORT_GROUP),
         reply_markup=InlineKeyboardMarkup(button1)
     )
     message.delete()
