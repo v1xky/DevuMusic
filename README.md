@@ -15,7 +15,7 @@
 
 <pre>
 <b><i>••Deploy DevuMusic to Okteto••</i></b>
-<p align="center"><a href="https://cloud.okteto.com/deploy?repository=https://github.com/ItsmeHyper13/DevuMusic"><img src="https://img.shields.io/badge/Deploy_To_Okteto%20%20-black?style=for-the-badge&logo=Okteto" width="200"/></a></p>
+<p><a href="https://cloud.okteto.com/deploy?repository=https://github.com/ItsmeHyper13/DevuMusic"><img src="https://img.shields.io/badge/Deploy_To_Okteto%20%20-black?style=for-the-badge&logo=Okteto" width="200"/></a></p>
 </details>
 <details>
 <summary><b><h3>Credits</h3></b></summary>
