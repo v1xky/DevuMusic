@@ -14,12 +14,12 @@ from cache.stuffs.string2 import (button1, button2, button3, button4)
 
 @bot.on_message(filters.command("start"))
 def start_(bot, message):
-     message.reply_photo(
-            photo={BOT_IMG},
-            caption=t1.format(message.from_user.mention, BOT_NAME, SUPPORT_GROUP),
-            reply_markup=InlineKeyboardMarkup(button1)
-        )
-        message.delete()
+    message.reply_photo(
+        photo={BOT_IMG},
+        caption=t1.format(message.from_user.mention, BOT_NAME, SUPPORT_GROUP),
+        reply_markup=InlineKeyboardMarkup(button1)
+    )
+    message.delete()
 
 @bot.on_message(filters.command("help"))
 def help_(bot, message):
