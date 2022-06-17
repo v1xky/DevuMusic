@@ -17,10 +17,6 @@ from pyrogram.types import (CallbackQuery, InlineKeyboardButton,
                             ReplyKeyboardMarkup, ReplyKeyboardRemove)
 
 
-PAUSED = "https://telegra.ph/file/94ee2bdfc7e81d371aae3.jpg"
-RESUMED = "https://telegra.ph/file/50cf13056d78898e13ae0.jpg"
-SKIPPED = "https://telegra.ph/file/116d7d9b9100c44249333.jpg"
-END = "https://telegra.ph/file/6d1902d08c88f318d53c7.jpg"
 
 BUTTON = [
     [
@@ -35,11 +31,9 @@ ACTV_CALLS = []
 @errors
 @authorized_users_only
 async def pause(_, message: Message):
-    await callsmusic.pytgcalls.pause_stream(message.chat.id)
-    
-    await message.reply_photo(
-        photo=PAUSED,
-        caption=f"ᴏᴋᴋ, sᴛʀᴇᴀᴍ ᴘᴀᴜsᴇᴅ ʙʏ {message.from_user.mention} 🥀\n\n✦ /resume :- ʀᴇsᴜᴍᴇ ᴘᴀᴜsᴇᴅ sᴛʀᴇᴀᴍ!",
+    await callsmusic.pytgcalls.pause_stream(message.chat.id)   
+    await message.reply_text(
+        f"ᴏᴋᴋ, sᴛʀᴇᴀᴍ ᴘᴀᴜsᴇᴅ ʙʏ {message.from_user.mention} 🥀\n\n✦ /resume :- ʀᴇsᴜᴍᴇ ᴘᴀᴜsᴇᴅ sᴛʀᴇᴀᴍ!",
         reply_markup=InlineKeyboardMarkup(BUTTON)
     )
     await message.delete()
@@ -50,10 +44,8 @@ async def pause(_, message: Message):
 @authorized_users_only
 async def resume(_, message: Message):
     await callsmusic.pytgcalls.resume_stream(message.chat.id)
-    
-    await message.reply_photo(
-        photo=RESUMED,
-        caption=f"ᴏᴋᴋ, ʀᴇsᴜᴍᴇᴅ ᴘᴀᴜsᴇᴅ sᴛʀᴇᴀᴍ ʙʏ {message.from_user.mention} 💫.\n\n✦ /pause :- ᴘᴀᴜsᴇ ᴘʟᴀʏʙᴀᴄᴋ!!",
+    await message.reply_text(
+        f"ᴏᴋᴋ, ʀᴇsᴜᴍᴇᴅ ᴘᴀᴜsᴇᴅ sᴛʀᴇᴀᴍ ʙʏ {message.from_user.mention} 💫.\n\n✦ /pause :- ᴘᴀᴜsᴇ ᴘʟᴀʏʙᴀᴄᴋ!!",
         reply_markup=InlineKeyboardMarkup(BUTTON)
     )
     await message.delete()
@@ -63,27 +55,17 @@ async def resume(_, message: Message):
 @errors
 @authorized_users_only
 async def stop(_, message: Message):
-    chut_id = message.chat.id
-    if int(chut_id) not in ACTV_CALLS:
-        await message.reply_text(
-            "ᴡᴛғ, ᴘʟᴀʏ ᴛʜᴇ sᴏɴɢ ғɪʀsᴛ ɪɴ ᴏʀᴅᴇʀ ᴛᴏ sᴋɪᴘ ᴛᴀᴛ🙄!",
-            reply_markup=InlineKeyboardMarkup(BUTTON)
-        )
-        await message.delete()
-    else:
-        try:
-            callsmusic.queues.clear(message.chat.id)
-        except QueueEmpty:
-            pass
+    try:
+        callsmusic.queues.clear(message.chat.id)
+    except QueueEmpty:
+        pass
 
-        await callsmusic.pytgcalls.leave_group_call(message.chat.id)
-    
-        await message.reply_photo(
-            photo=END,
-            caption=f"ᴏᴋᴋ, sᴛʀᴇᴀᴍ ᴇɴᴅᴇᴅ ʙʏ {message.from_user.mention} \n ɴᴏᴡ ʟᴇᴀᴠɪɴɢ ᴠᴄ ʙʏᴇ ʙʏᴇ!👋🏻",
-            reply_markup=InlineKeyboardMarkup(BUTTON)
-        )
-        await message.delete()
+    await callsmusic.pytgcalls.leave_group_call(message.chat.id)   
+    await message.reply_text(
+        f"ᴏᴋᴋ, sᴛʀᴇᴀᴍ ᴇɴᴅᴇᴅ ʙʏ {message.from_user.mention} \n ɴᴏᴡ ʟᴇᴀᴠɪɴɢ ᴠᴄ ʙʏᴇ ʙʏᴇ!👋🏻",
+        reply_markup=InlineKeyboardMarkup(BUTTON)
+    )
+    await message.delete()
     
 
 @Client.on_message(command(["skip"]) & other_filters)
@@ -114,11 +96,9 @@ async def skip(_, message: Message):
                         callsmusic.queues.get(chat_id)["file"],
                     ),
                 ),
-            )
-    
-    await message.reply_photo(
-        photo=SKIPPED,
-        caption=f"ʜᴜʜ ᴏᴋᴋ, ᴍᴏᴠᴇᴅ ᴛᴏ ᴛʜᴇ ɴᴇxᴛ sᴏɴɢ!\nsᴛʀᴇᴀᴍ sᴋɪᴘ ʙʏ {message.from_user.mention}🥀",
+            )   
+    await message.reply_text(
+        f"ʜᴜʜ ᴏᴋᴋ, ᴍᴏᴠᴇᴅ ᴛᴏ ᴛʜᴇ ɴᴇxᴛ sᴏɴɢ!\nsᴛʀᴇᴀᴍ sᴋɪᴘ ʙʏ {message.from_user.mention}🥀",
         reply_markup=InlineKeyboardMarkup(BUTTON)
     )
     await message.delete()
