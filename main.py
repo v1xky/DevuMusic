@@ -22,9 +22,9 @@ bot = Bot(
 async def main():
     async with bot:
         try:
-            await USER.join_chat(SILENT_DEVS)
-            await USER.join_chat(SILENT_BOTS)
-            await USER.join_chat(SilentVerse)
+            await USER.join_chat("SILENT_DEVS")
+            await USER.join_chat("SILENT_BOTS")
+            await USER.join_chat("SilentVerse")
         except UserAlreadyParticipant:
             pass
         except Exception as e:
