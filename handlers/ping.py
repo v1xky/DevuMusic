@@ -40,15 +40,12 @@ def get_readable_time(seconds: int) -> str:
 
 @sree.on_message(filters.command("ping") & filters.group)
 async def ping(sree, m: Message):
-    start_time = time.time()
     pythn = platform.python_version()    
     start = datetime.now()
-    a = await m.reply("⚡")
-    await sleep(1)
-    await a.delete()       
+    start_time = time.time()
     b = await m.reply_photo(photo=BOT_IMG, caption=ptxt1)
-    end_time = time.time()
     await sleep(1.5)
+    end_time = time.time()
     uptime = get_readable_time((time.time() - start_time))
     pong1 = (datetime.now() - start).microseconds / 1000
     pong2 = str(round((end_time - start_time) * 1000, 3)) + " ms"
