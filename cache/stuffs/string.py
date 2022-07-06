@@ -50,7 +50,7 @@ ptxt2 = """<b><i><u>Wew</u></i></b>, `{}` <b><i><u>is working good!⚡</u></i></
 
 <b><i><u>♡︎Ping Pong!! ✨</u></i></b>
 
-♡︎Server Ping: <code>{}</code>
+♡︎Server Ping: <code>{} ms</code>
 ♡︎Bot Ping: <code>{}</code>
 ♡︎Uptime: <code>{}</code>
 ♡︎Pyrogram Version: <code>{}</code>
