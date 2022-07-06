@@ -1,7 +1,7 @@
 import time
 import os
-import time
 import re
+from main import lbda
 from sys import argv
 import platform
 from datetime import datetime
@@ -46,7 +46,7 @@ async def ping(sree, m: Message):
     b = await m.reply_photo(photo=BOT_IMG, caption=ptxt1)
     await sleep(1.5)
     end_time = time.time()
-    uptime = get_readable_time((time.time() - start_time))
+    uptime = get_readable_time((time.time() - lbda))
     pong1 = (datetime.now() - start).microseconds / 1000
     pong2 = str(round((end_time - start_time) * 1000, 3)) + " ms"
     await b.edit_text(ptxt2.format(BOT_NAME, pong1, pong2, uptime, pyro, pythn, OWNER_USERNAME))
