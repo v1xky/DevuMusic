@@ -2,7 +2,7 @@
 # Dear Pero ppls Plish Don't remove this line from here🌚
 # created by ItsmeHyper13
 
-import requests
+import requests, time
 from pyrogram import idle
 from pyrogram import Client as Bot
 from callsmusic.callsmusic import client as USER
@@ -18,7 +18,7 @@ bot = Bot(
     bot_token=BOT_TOKEN,
     plugins=dict(root="handlers")
 )
-
+lbda = time.time()
 async def main():
     async with bot:
         try:
