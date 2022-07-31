@@ -1,16 +1,22 @@
+# Creator Or Dev @HYPER_AD13 | @ShiningOff <Found On telegram>
+# Found on github < https://github.com/ItsmeHyper13 >
+
 import asyncio
 
-from pyrogram import Client
+from pyrogram import Client as cl
 
+API_ID = input("\nEnter Your API_ID:\n > ")
+API_HASH = input("\nEnter Your API_HASH:\n > ")
 
-print(Enter your app information from my.telegram.org/apps below.)
+print("\n\n Enter Phone number when asked.\n\n")
+
+si = cl(":memory:", api_id=API_ID, api_hash=API_HASH)
 
 
 async def main():
-    async with Client(:memory:, api_id=int(input(API ID:)), api_hash=input(API HASH:)) as app:
-        print(await app.export_session_string())
+    await si.start()
+    ss = await si.export_session_string()
+    print(f"\n{ss}\n")
 
 
-if __name__ == __main__:
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(main())
+asyncio.run(main())
