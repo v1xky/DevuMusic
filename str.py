@@ -2,7 +2,7 @@
 # Found on github < https://github.com/ItsmeHyper13 >
 
 import asyncio
-
+from config import API_ID, API_HASH, BOT_TOKEN
 from pyrogram import Client as cl
 
 API_ID = input("\nEnter Your API_ID:\n > ")
