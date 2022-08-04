@@ -47,7 +47,7 @@
 
 <p><code>##This Project Under</code> <pre> <a href="https://t.me/SILENT_DEVS"><img src="https://img.shields.io/badge/Join-Team%20%20Silent-blue?style=for-the-badge&logo=telegram"></a></pre>
 
-<!- added contributors list -->
+<!-- added contributors list -->
 
 <p><h3><strong>Contributors 👩‍💻</strong></h3>
 <a href = "https://github.com/ItsmeHyper13/DevuMusic/graphs/contributors">
