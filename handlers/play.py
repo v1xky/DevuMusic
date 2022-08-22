@@ -1,9 +1,3 @@
-# Powered by @HYPER_AD13 | @ShiningOff
-# Dear Pero ppls Plish Don't remove this line from here🌚
-
-# Powered by @HYPER_AD13 | @ShiningOff
-# Dear Pero ppls Plish Don't remove this line from here🌚
-
 import os
 from os import path
 from pyrogram import Client, filters
@@ -109,7 +103,7 @@ async def play(_, message: Message):
     await message.delete()
     usrid = message.from_user.mention
 
-    lel = await message.reply("🔍")
+    lel = await message.reply("❄️")
 
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
@@ -117,7 +111,7 @@ async def play(_, message: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "SilentMusic01"
+        user.first_name = "Angelmusic"
     usar = user
     wew = usar.id
     try:
@@ -135,7 +129,7 @@ async def play(_, message: Message):
                 try:
                     await USER.join_chat(invitelink)
                     await USER.send_message(
-                        message.chat.id, "sɪʟᴇɴᴛ-ᴍᴜsɪᴄ's ᴀssɪsᴛᴀɴᴛ ᴊᴏɪɴ ᴛʜᴇ ᴄʜᴀᴛ ᴡᴏᴡ🧚‍♀️🥀")
+                        message.chat.id, "ᴍᴜsɪᴄ's ᴀssɪsᴛᴀɴᴛ ᴊᴏɪɴ ᴛʜᴇ ᴄʜᴀᴛ ᴡᴏᴡ🧚‍♀️🥀")
 
                 except UserAlreadyParticipant:
                     pass
@@ -165,7 +159,7 @@ async def play(_, message: Message):
 
         file_name = get_file_name(audio)
         title = file_name
-        thumb_name = "https://telegra.ph/file/9350788513346feef5087.jpg"
+        thumb_name = "https://telegra.ph/file/2ea68c90e827117f0a786.jpg"
         thumbnail = thumb_name
         duration = round(audio.duration / 60)
         views = "Locally added"
@@ -174,11 +168,11 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                            text="ᴛᴇᴀᴍ-sɪʟᴇɴᴛ🥀",
-                            url=f"https://t.me/SILENT_DEVS"),
+                            text="ꜱᴜᴘᴘᴏʀᴛ🥀",
+                            url=f"https://t.me/angelsupports"),
                     InlineKeyboardButton(
                             text="ᴜᴘᴅᴀᴛᴇs👾",
-                            url=f"https://t.me/SILENT_BOTS"),
+                            url=f"https://t.me/angel_updates"),
                ],
                [
                    InlineKeyboardButton(text="Close Menu", callback_data="close_"),                   
@@ -218,11 +212,11 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                            text="ᴛᴇᴀᴍ-sɪʟᴇɴᴛ🥀",
-                            url=f"https://t.me/SILENT_DEVS"),
+                            text="ꜱᴜᴘᴘᴏʀᴛ🥀",
+                            url=f"https://t.me/angelsupports"),
                     InlineKeyboardButton(
                             text="ᴜᴘᴅᴀᴛᴇs👾",
-                            url=f"https://t.me/SILENT_BOTS"),
+                            url=f"https://t.me/angel_updates"),
                ],
                [
                    InlineKeyboardButton(text="Close Menu", callback_data="close_"),                   
@@ -232,18 +226,18 @@ async def play(_, message: Message):
     
         except Exception as e:
             title = "NaN"
-            thumb_name = "https://telegra.ph/file/9350788513346feef5087.jpg"
+            thumb_name = "https://telegra.ph/file/de99df192c5c99fc6b2d7.jpg"
             duration = "NaN"
             views = "NaN"
             keyboard = InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                            text="ᴛᴇᴀᴍ-sɪʟᴇɴᴛ🥀",
-                            url=f"https://t.me/SILENT_DEVS"),
+                            text="ꜱᴜᴘᴘᴏʀᴛ🥀",
+                            url=f"https://t.me/angelsupports"),
                     InlineKeyboardButton(
                             text="ᴜᴘᴅᴀᴛᴇs👾",
-                            url=f"https://t.me/SILENT_BOTS"),
+                            url=f"https://t.me/angel_updates"),
                ],
                [
                    InlineKeyboardButton(text="Close Menu", callback_data="close_"),                   
@@ -298,11 +292,11 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                            text="ᴛᴇᴀᴍ-sɪʟᴇɴᴛ🥀",
-                            url=f"https://t.me/SILENT_DEVS"),
+                            text="ꜱᴜᴘᴘᴏʀᴛ🥀",
+                            url=f"https://t.me/angelsupports"),
                     InlineKeyboardButton(
                             text="ᴜᴘᴅᴀᴛᴇs👾",
-                            url=f"https://t.me/SILENT_BOTS"),
+                            url=f"https://t.me/angelupdates"),
                ],
                [
                    InlineKeyboardButton(text="Close Menu", callback_data="close_"),                   
